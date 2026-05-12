@@ -59,6 +59,10 @@ button {
     background-color: #dc3545;
     color: white;
 }
+#resetar {
+    background-color: #6c757d;
+    color: white;
+}
 
 button:hover {
     background-color: #0056b3;

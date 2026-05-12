@@ -1,26 +1,27 @@
-// 1. Seleção de elementos (como você fez)
+// 1. Seleção de elementos 
 const msg = document.getElementById("mensagem");
 const pontoJogador = document.getElementById("ponto-jogador");
 const pontoComputador = document.getElementById("ponto-computador");
 const pontoEmpates = document.getElementById("ponto-empates");
 const escolhaPcTexto = document.getElementById("escolha-pc");
+const bataoresetar = document.getElementById("resetar");
 
-// 2. Variáveis de controle (estilo do curso - mais seguro)
+// 2. Variáveis de controle de pontuação
 let scoreJogador = 0;
 let scorePC = 0;
 let scoreEmpate = 0;
 
-// 3. Função apenas para o sorteio (Modularidade)
+// 3. Função apenas para o sorteio 
 const getEscolhaPC = () => {
     const opcoes = ["Pedra", "Papel", "Tesoura"];
     return opcoes[Math.floor(Math.random() * 3)];
 };
 
-// 4. Função principal de lógica (Separada)
+// 4. Função principal de lógica 
 const jogar = (escolhaJogador) => {
     const escolhaPC = getEscolhaPC();
     
-    // Mapa de ícones que você aprendeu
+    // Mapa de ícones 
     const icones = { "Pedra": "👊 Pedra ","Papel": "✋ Papel ","Tesoura": "✌️ Tesoura " };
     escolhaPcTexto.textContent = icones[escolhaPC];
 
@@ -48,11 +49,30 @@ const jogar = (escolhaJogador) => {
     }
 };
 
-// 5. Event Listeners usando Arrow Functions (Mais limpo)
+const zerarPlacar = () => {
+    // Reseta as variáveis internas na memória
+    scoreJogador = 0;
+    scorePC = 0;
+    scoreEmpate = 0;
+
+    // Atualiza a interface usando textContent (texto puro)
+    pontoJogador.textContent = 0;
+    pontoComputador.textContent = 0;
+    pontoEmpates.textContent = 0;
+    
+    // Reseta as mensagens da tela
+    escolhaPcTexto.textContent = "-";
+    msg.textContent = "Placar zerado! Escolha uma opção.";
+    msg.style.color = "#333"; // Volta para a cor padrão escura
+};
+
+
+
+// 5. Event Listeners usando Arrow Functions 
 document.getElementById("Pedra").addEventListener("click", () => jogar("Pedra"));
 document.getElementById("Papel").addEventListener("click", () => jogar("Papel"));
 document.getElementById("Tesoura").addEventListener("click", () => jogar("Tesoura"));
-
+document.getElementById("resetar").addEventListener("click", zerarPlacar);
 
 /* Primeira tentativa, ficou modo antigo
 
