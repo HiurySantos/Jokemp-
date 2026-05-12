@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    background: url("https://picsum.photos/1920/1080");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: rgb(239, 240, 241);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 350px;
+}
+
+.placar {
+    display: flex;
+    justify-content: space-around;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.botoes {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    transition: transform 0.1s, background 0.3s;
+}
+
+#Pedra {
+    background-color: #007bff;
+    color: white;
+}
+#Papel {
+    background-color: #28a745;
+    color: white;
+}
+#Tesoura {
+    background-color: #dc3545;
+    color: white;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+.resultado {
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+}
+
+#mensagem {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+#ponto-jogador {
+    color : blue
+}
+
+#ponto-computador {
+    color : red
+}
+#ponto-empates {
+    color : gray
+}
